@@ -1,4 +1,4 @@
-# 使用 CompositionAPI 结合 defineStore 来定义 Store
+## 使用 CompositionAPI 结合 defineStore 来定义 Store
 
 defineStore(mouduleId, storeFunc)
 用 ref 声明 state, computed 声明 getter， function 声明 action。
@@ -27,7 +27,7 @@ export const useUserStore = defineStore("user", () => {
 });
 ```
 
-# Composition API 中调用
+## Composition API 中调用
 
 直接引入 user.js 中的 useUserStore 对象，然后从中解构出想要的 state, getter, action 中使用，注意 state 是 ref 对象
 
@@ -44,7 +44,7 @@ const changeAge = () => {
 </script>
 ```
 
-# Option API 中调用
+## Option API 中调用
 
 使用辅助函数 mapState 来取 state 和 getter 的值;
 
@@ -59,7 +59,8 @@ const changeAge = () => {
 - 不传： 全部取出来
 - array：取指定 key 值数据
 - object: 去指定值并改名{'old':'new'}
-  详细使用请参照 pinia 的 mapState、mapWritableState 和 mapActions 方法。
+
+详细使用请参照 pinia 的 mapState、mapWritableState 和 mapActions 方法。
 
 ```js
 <script>
