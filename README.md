@@ -1,5 +1,10 @@
 # StoreManage介绍
 
+## 安装
+```
+npm i @zqhexor/store-manage
+```
+
 ## 使用 CompositionAPI 结合 defineStore 来定义 Store
 
 defineStore(mouduleId, storeFunc)
