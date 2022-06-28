@@ -1,14 +1,19 @@
-# StoreManage介绍
+# StoreManage 介绍
 
 ## 安装
+
 ```
 npm i @zqhexor/store-manage
 ```
 
-## 使用 CompositionAPI 结合 defineStore 来定义 Store
+## 使用 Composition API 结合 defineStore 来定义 Store
 
 defineStore(mouduleId, storeFunc)
-用 ref 声明 state, computed 声明 getter， function 声明 action。
+
+- `mouduleId` 模块唯一标志
+- `storeFunc` store 定义
+
+  其中用 `ref` 声明 `state`, `computed` 声明 `getter`， `function` 声明 `action`。
 
 ```js
 // user.js
@@ -36,16 +41,16 @@ export const useUserStore = defineStore("user", () => {
 
 ## Composition API 中调用
 
-直接引入 user.js 中的 useUserStore 对象，然后从中解构出想要的 state, getter, action 中使用，注意 state 是 ref 对象
+直接引入 user.js 中的 useUserStore 对象，然后从中解构出想要的 `state`, `getter`, `action` 中使用，注意 `state` 是 `ref` 对象
 
 ```js
 <script setup>
-import  { useUserStore }  from "@/store/user";
+import  { useUserStore }  from '@/store/user';
 
 const userStore = useUserStore();
-const { firstName, age, changeAge } = userStore
-firstName.value = 'Taylor'
-const changeAge = () => {
+const { firstName, age, changeAge } = userStore;
+firstName.value = 'Taylor';
+const changeAge2 = () => {
   userStore.changeAge();
 };
 </script>
@@ -53,13 +58,13 @@ const changeAge = () => {
 
 ## Option API 中调用
 
-使用辅助函数 mapState 来取 state 和 getter 的值;
+使用辅助函数 `mapState` 来取 `stat`e`和`getter` 的值;
 
-使用辅助函数 mapWritableState 来读写 state 的值;
+使用辅助函数 `mapWritableState` 来读写 `state` 的值;
 
-使用辅助函数 mapActions 来取 action 的值;
+使用辅助函数 `mapActions` 来取 `action` 的值;
 
-其中第一个参数是 store 模块，
+其中第一个参数是 `store` 模块，
 
 第二个参数：
 
@@ -71,19 +76,18 @@ const changeAge = () => {
 
 ```js
 <script>
-  import {useUserStore} from "@/store/user";
-  import {mapState, mapActions, mapWritableState} from "@/store/storeManager";
+  import { useUserStore } from '@/store/user';
+  import { mapState, mapActions, mapWritableState } from '@/store/storeManager';
 
-  const user = useUserStore()
-  const alarm = useAlarmStore()
+  const user = useUserStore();
 
   export default {
     data() {
       return {}
     },
     computed: {
-      ...mapState(user, ["age"]),
-      ...mapWritableState(user, {"age": "age2"}),
+      ...mapState(user, ['age']),
+      ...mapWritableState(user, {'age': 'age2'}),
     },
     methods: {
       ...mapActions(user, ['changeAge']),

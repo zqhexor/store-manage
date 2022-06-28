@@ -1,6 +1,6 @@
 {
   "name": "@zqhexor/store-manage",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "state manager like pinia",
   "files": [
     "dist"
