@@ -18,9 +18,13 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "HexOr",
-  "license": "ISC",
+  "keywords": ["store-manage", "state", "pinia"],
+  "author": "Hexor Zeng <https://github.com/zqhexor>",
+   "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zqhexor/store-manage.git"
+  },
+  "license": "MIT",
   "devDependencies": {
     "vite": "^2.9.12"
   },
