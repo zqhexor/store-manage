@@ -19,14 +19,14 @@ defineStore(mouduleId, storeFunc)
 
 ```js
 // user.js
-import { defineStore } from "@/store/storeManager";
-export const useUserStore = defineStore("user", () => {
-  const firstName = ref("HexOr");
-  const lastName = ref("Zeng");
+import { defineStore } from '@zqhexor/store-manage';
+export const useUserStore = defineStore('user', () => {
+  const firstName = ref('HexOr');
+  const lastName = ref('Zeng');
 
   const age = ref(16);
   const getName = computed(() => {
-    return firstName.value + " " + lastName.value;
+    return `${firstName.value} ${lastName.value}`;
   });
   const changeAge = () => {
     age.value++;
@@ -47,7 +47,7 @@ export const useUserStore = defineStore("user", () => {
 
 ```js
 <script setup>
-import  { useUserStore }  from '@/store/user';
+import { useUserStore } from '@/store/user';
 
 const userStore = useUserStore();
 const { firstName, age, changeAge } = userStore;
@@ -79,22 +79,22 @@ const changeAge2 = () => {
 ```js
 <script>
   import { useUserStore } from '@/store/user';
-  import { mapState, mapActions, mapWritableState } from '@/store/storeManager';
+  import { mapState, mapActions, mapWritableState } from '@zqhexor/store-manage';
 
-  const user = useUserStore();
+  const userStore = useUserStore();
 
   export default {
     data() {
       return {}
     },
     computed: {
-      ...mapState(user, ['age']),
-      ...mapWritableState(user, {'age': 'age2'}),
+      ...mapState(userStore, ['age']),
+      ...mapWritableState(userStore, {'age': 'age2'}),
     },
     methods: {
-      ...mapActions(user, ['changeAge']),
+      ...mapActions(userStore, ['changeAge']),
       changeAge2() {
-        this.age2 += 1
+        this.age2 += 1;
       }
     }
   }
