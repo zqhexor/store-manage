@@ -1,4 +1,6 @@
 # StoreManage 介绍
+## 简介
+`StoreManage` 是一个轻量级的状态管理工具库
 
 ## 安装
 
@@ -10,8 +12,8 @@ npm i @zqhexor/store-manage
 
 defineStore(mouduleId, storeFunc)
 
-- `mouduleId` 模块唯一标志
-- `storeFunc` store 定义
+- `mouduleId` string | symbol 模块唯一标志
+- `storeFunc` function store定义函数
 
   其中用 `ref` 声明 `state`, `computed` 声明 `getter`， `function` 声明 `action`。
 
@@ -58,7 +60,7 @@ const changeAge2 = () => {
 
 ## Option API 中调用
 
-使用辅助函数 `mapState` 来取 `stat`e`和`getter` 的值;
+使用辅助函数 `mapState` 来取 `state`和`getter` 的值;
 
 使用辅助函数 `mapWritableState` 来读写 `state` 的值;
 
@@ -72,7 +74,7 @@ const changeAge2 = () => {
 - array：取指定 key 值数据
 - object: 去指定值并改名{'old':'new'}
 
-详细使用请参照 pinia 的 mapState、mapWritableState 和 mapActions 方法。
+详细使用请参照 [pinia](https://pinia.web3doc.top/introduction.html) 的 `mapState`、`mapWritableState` 和 `mapActions` 方法。
 
 ```js
 <script>
