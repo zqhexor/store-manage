@@ -1,6 +1,6 @@
 {
   "name": "@zqhexor/store-manage",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "state manager like pinia",
   "keywords": ["store-manage", "state", "pinia"],
   "author": "Hexor Zeng <https://github.com/zqhexor>",
