@@ -1,6 +1,6 @@
 {
   "name": "@zqhexor/store-manage",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "state manager like pinia",
   "keywords": ["store-manage", "state", "pinia"],
   "author": "Hexor Zeng <https://github.com/zqhexor>",
@@ -22,7 +22,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "publish": "npm run build && npm publish"
   },
   "devDependencies": {
     "vite": "^2.9.12"
